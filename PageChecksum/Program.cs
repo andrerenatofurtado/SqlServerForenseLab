@@ -1,4 +1,5 @@
-﻿using System.IO.MemoryMappedFiles;
+﻿using SqlCore.Engine;
+using System.IO.MemoryMappedFiles;
 
 namespace PageChecksum
 {
@@ -64,12 +65,12 @@ namespace PageChecksum
                     pageSize);
 
                 pageType = pageBuffer[1];
-                pageTypeDesc = SqlCore.Engine.PageHeader.GetPageTypeDesc(pageType);
+                pageTypeDesc = PageHeader.GetPageTypeDesc(pageType);
 
                 flagBits = BitConverter.ToInt16(pageBuffer, 4);
-                flagBitsDesc = SqlCore.Engine.PageHeader.GetFlagBitsDesc(flagBits);
+                flagBitsDesc = PageHeader.GetFlagBitsDesc(flagBits);
 
-                hasChecksum = SqlCore.Engine.PageHeader.HasChecksum(flagBits);
+                hasChecksum = PageHeader.HasChecksum(flagBits);
 
                 Console.WriteLine($"Page ID: {pageId}");
                 Console.WriteLine($"Page Type: {pageTypeDesc}");

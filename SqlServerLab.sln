@@ -3,9 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.9.34701.34
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SqlCore", "SqlCore\SqlCore.csproj", "{F7566645-2661-4782-B124-804DC2627FC3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SqlCore", "SqlCore\SqlCore.csproj", "{F7566645-2661-4782-B124-804DC2627FC3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PageChecksum", "PageChecksum\PageChecksum.csproj", "{AD8FC066-827B-49BE-B94E-8DD9C4485469}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PageChecksum", "PageChecksum\PageChecksum.csproj", "{AD8FC066-827B-49BE-B94E-8DD9C4485469}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChecksumStatsStream", "ChecksumStatsStream\ChecksumStatsStream.csproj", "{72137F69-7E92-4C0F-948A-C499C4E87D7E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{AD8FC066-827B-49BE-B94E-8DD9C4485469}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AD8FC066-827B-49BE-B94E-8DD9C4485469}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AD8FC066-827B-49BE-B94E-8DD9C4485469}.Release|Any CPU.Build.0 = Release|Any CPU
+		{72137F69-7E92-4C0F-948A-C499C4E87D7E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{72137F69-7E92-4C0F-948A-C499C4E87D7E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{72137F69-7E92-4C0F-948A-C499C4E87D7E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{72137F69-7E92-4C0F-948A-C499C4E87D7E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,4 +1,6 @@
-﻿namespace SqlCore.Engine
+﻿using SqlCore.Utils;
+
+namespace SqlCore.Engine
 {
     public static class PageChecksum
     {
@@ -40,15 +42,11 @@
                 for (int j = 0; j < numOfElements; j++)
                     overall ^= pagebuf[i, j];
 
-                checksum ^= rol(overall, seed - i);
+                checksum ^= Functions.rol(overall, seed - i);
             }
 
             return checksum;
         }
 
-        private static uint rol(uint value, int rotation)
-        {
-            return (value << rotation) | (value >> (32 - rotation));
-        }
     }
 }
