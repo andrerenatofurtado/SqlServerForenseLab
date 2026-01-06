@@ -7,9 +7,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SqlCore", "SqlCore\SqlCore.
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PageChecksum", "PageChecksum\PageChecksum.csproj", "{AD8FC066-827B-49BE-B94E-8DD9C4485469}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChecksumStatsStream", "ChecksumStatsStream\ChecksumStatsStream.csproj", "{72137F69-7E92-4C0F-948A-C499C4E87D7E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ChecksumStatsStream", "ChecksumStatsStream\ChecksumStatsStream.csproj", "{72137F69-7E92-4C0F-948A-C499C4E87D7E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MetadataObjectId", "MetadataObjectId\MetadataObjectId.csproj", "{CBF86D2D-E232-4927-AE0E-545F9985A801}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MetadataObjectId", "MetadataObjectId\MetadataObjectId.csproj", "{CBF86D2D-E232-4927-AE0E-545F9985A801}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -7,7 +7,7 @@ namespace ChecksumStatsStream
     {
         static void Main(string[] args)
         {
-            // Calculate checksum of a stats_stream BLOB
+            // Calculates checksum of a stats_stream BLOB
 
             CalculateStatsStreamChecksum();
         }

@@ -49,5 +49,11 @@
         {
             return (value << rotation) | (value >> (32 - rotation));
         }
+
+        public static uint ror(uint value, int rotation)
+        {
+            return (value >> rotation) | (value << (32 - rotation));
+        }
+
     }
 }
