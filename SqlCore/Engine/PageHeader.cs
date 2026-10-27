@@ -1,7 +1,4 @@
-﻿using System.Diagnostics.Metrics;
-using System;
-
-namespace SqlCore.Engine
+﻿namespace SqlCore.Engine
 {
     public static class PageHeader
     {
@@ -42,7 +39,7 @@ namespace SqlCore.Engine
             {
                 if ((flagBits & (1 << i)) != 0)
                 {
-                    bits.Add(GetBitDesc(i));
+                    bits.Add(GetFlagBitDesc(i));
                 }
             }
 
@@ -51,12 +48,13 @@ namespace SqlCore.Engine
                 : "";
         }
 
-        public static bool HasChecksum(short flagBits)
-        {
-            return (flagBits & (1 << 9)) != 0;
-        }
+        static string GetTypeFlagBitDesc(byte bitIndex) =>
+            bitIndex switch
+            {
+                7 => "HAS_COMPRESSION_INFO"
+            };
 
-        static string GetBitDesc(int bitIndex) =>
+        static string GetFlagBitDesc(int bitIndex) =>
             bitIndex switch
             {
                 0 => "IS_IN_SYSXACT",
@@ -76,5 +74,25 @@ namespace SqlCore.Engine
                 14 => "ADD_BEG",
                 15 => "ADD_END"
             };
+
+        public static bool HasChecksum(short flagBits)
+        {
+            return (flagBits & (1 << 9)) != 0;
+        }
+
+        public static bool HasTearproof(short flagBits)
+        {
+            return (flagBits & (1 << 8)) != 0;
+        }
+
+        public static bool IsEncrypted(short flagBits)
+        {
+            return (flagBits & 0xC00) != 0;
+        }
+
+        public static bool IsCompressed(byte typeFlagBits)
+        {
+            return (typeFlagBits & 0x80) != 0;
+        }
     }
 }

@@ -1,4 +1,6 @@
-﻿namespace SqlCore.Utils
+﻿using System.Security.Cryptography;
+
+namespace SqlCore.Utils
 {
     public static class Functions
     {
@@ -26,6 +28,14 @@
         public static bool IsBitSet(byte value, int bitPosition)
         {
             if (bitPosition < 0 || bitPosition > 7)
+                throw new ArgumentOutOfRangeException(nameof(bitPosition));
+
+            return (value & (1 << bitPosition)) != 0;
+        }
+
+        public static bool IsBitSet(short value, int bitPosition)
+        {
+            if (bitPosition < 0 || bitPosition > 15)
                 throw new ArgumentOutOfRangeException(nameof(bitPosition));
 
             return (value & (1 << bitPosition)) != 0;
@@ -103,5 +113,9 @@
             return (value >> rotation) | (value << (32 - rotation));
         }
 
+        public static byte[] GenerateRandomSalt()
+        {
+            return RandomNumberGenerator.GetBytes(4);
+        }
     }
 }
